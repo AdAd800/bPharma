@@ -5,7 +5,7 @@
         <field name="name">bpharma.medicine.tree</field>
         <field name="model">bpharma.medicine</field>
         <field name="arch" type="xml">
-            <tree string="Médicaments">
+            <tree string="Medicaments">
                 <field name="registration_number"/>
                 <field name="code"/>
                 <field name="dci"/>
