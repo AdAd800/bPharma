@@ -1,0 +1,78 @@
+<!-- bPharma/views/pharmacy_views.xml -->
+<odoo>
+    <!-- Vue liste -->
+    <record id="view_medicine_tree" model="ir.ui.view">
+        <field name="name">bpharma.medicine.tree</field>
+        <field name="model">bpharma.medicine</field>
+        <field name="inherit_id" type="xml">
+            <tree string="Médicaments">
+                <field name="registration_number"/>
+                <field name="code"/>
+                <field name="dci"/>
+                <field name="brand_name"/>
+                <field name="form_med"/>
+                <field name="dosage"/>
+                <field name="packaging"/>
+                <field name="lab_holder"/>
+                <field name="lab_holder_country"/>
+                <field name="date_registration_init"/>
+                <field name="date_registration_final"/>
+                <field name="type_medicine"/>
+                <field name="status_medicine"/>
+                <field name="stability_duration"/>
+                <field name="quantity"/>
+                <field name="price"/>
+            </tree>
+        </field>
+    </record>
+
+    <!-- Vue formulaire -->
+    <record id="view_medicine_form" model="ir.ui.view">
+        <field name="name">bpharma.medicine.form</field>
+        <field name="model">bpharma.medicine</field>
+        <field name="inherit_id" type="xml">
+            <form string="Médicament">
+                <sheet>
+                    <group>
+                        <field name="registration_number"/>
+                        <field name="code"/>
+                        <field name="dci"/>
+                        <field name="brand_name"/>
+                        <field name="form_med"/>
+                        <field name="dosage"/>
+                        <field name="packaging"/>
+                    </group>
+                    <group>
+                        <field name="lab_holder"/>
+                        <field name="lab_holder_country"/>
+                        <field name="date_registration_init"/>
+                        <field name="date_registration_final"/>
+                    </group>
+                    <group>
+                        <field name="type_medicine"/>
+                        <field name="status_medicine"/>
+                        <field name="stability_duration"/>
+                    </group>
+                    <group>
+                        <field name="quantity"/>
+                        <field name="price"/>
+                    </group>
+                </sheet>
+            </form>
+        </field>
+    </record>
+
+    <!-- Action pour l'ouverture de la liste -->
+    <record id="action_medicine" model="ir.actions.act_window">
+        <field name="name">Médicaments</field>
+        <field name="res_model">bpharma.medicine</field>
+        <field name="view_mode">tree,form</field>
+    </record>
+
+    <!-- Menus -->
+    <menuitem id="menu_pharmacy_root" name="Pharmacie"/>
+    <menuitem id="menu_bpharma.medicines" name="Médicaments" parent="menu_pharmacy_root" sequence="1"/>
+    <menuitem id="menu_medicine_action" name="Liste des médicaments"
+              parent="menu_bpharma.medicines"
+              action="action_medicine"/>
+</odoo>
