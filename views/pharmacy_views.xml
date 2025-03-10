@@ -4,7 +4,7 @@
     <record id="view_medicine_tree" model="ir.ui.view">
         <field name="name">bpharma.medicine.tree</field>
         <field name="model">bpharma.medicine</field>
-        <field name="inherit_id" type="xml">
+        <field name="arch" type="xml">
             <tree string="Médicaments">
                 <field name="registration_number"/>
                 <field name="code"/>
@@ -30,7 +30,7 @@
     <record id="view_medicine_form" model="ir.ui.view">
         <field name="name">bpharma.medicine.form</field>
         <field name="model">bpharma.medicine</field>
-        <field name="inherit_id" type="xml">
+        <field name="arch" type="xml">
             <form string="Médicament">
                 <sheet>
                     <group>
